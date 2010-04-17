@@ -6,14 +6,24 @@
 {{{
 require('mongo')
 -- query all the values in the namespace 'test.values' where a > 10
-local q = assert(db:query('test.values', {a = {['$gt'] = 10}}))
+local q1 = assert(db:query('test.values', {a = {['$gt'] = 10}}))
 
 -- loop through the result set
-for result in q:results() do
+for result in q1:results() do
         print(result.a)
         print(result.b)
 end
 
+-- query all the values in the namespace 'test.values' where a < 10 (JSON version)
+local q2 = assert(db:query('test.values', "{'a': {'$lt': 10}}"))
+
+local result = q2:next()
+while result do
+        print(result.a)
+        print(result.b)
+
+        result = q2:next()
+end
 
 }}}
 
