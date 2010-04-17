@@ -34,9 +34,16 @@ end
 }}}
 
 
-= Details =
+== Methods ==
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+=== ok,err = db:connect(connection_str) ===
+
+=== count,err = db:count(namespace) ===
+
+=== ok,err = db:insert(namespace, value) ===
+
+=== cursor,err = db:query(namespace, query) ===
+
+=== ok,err = db:remove(namespace, query, single) ===
+
+=== ok,err = db:update(namespace, query, modifier, upsert, multi) ===
