@@ -19,15 +19,15 @@ assert(db:insert('test.values', {a = 10, b = 'str1'}))
 assert(db:insert('test.values', "{'a': 20, 'b': 'str2'}"))
 
 -- print the number of rows in the namespace 'test.values'
-print(con:count('test.blah'))
+print(db:count('test.values'))
 
 -- query all the values in the namespace 'test.values'
-local q = assert(con:query('test.blah', {}))
+local q = assert(db:query('test.values', {}))
 
 -- loop through the result set
-for d in q:rows() do
-        print(d.a)
-        print(b.a)
+for result in q:results() do
+        print(result.a)
+        print(result.b)
 end
 
 
