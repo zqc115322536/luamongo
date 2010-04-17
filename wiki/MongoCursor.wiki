@@ -1,0 +1,29 @@
+#summary The MongoDB query cursor object
+
+= Synopsis =
+
+
+{{{
+require('mongo')
+-- query all the values in the namespace 'test.values' where a > 10
+local q = assert(db:query('test.values', {a = {['$gt'] = 10}}))
+
+-- loop through the result set
+for result in q:results() do
+        print(result.a)
+        print(result.b)
+end
+
+
+}}}
+
+
+== Methods ==
+
+=== result = query:next() ===
+
+Returns the next single result set (as a table) in the results of a query operation.
+
+=== iterator = query:results() ===
+
+Similar to the `next` method but returns an iterator function (as opposed to a table) that can be used in a for loop. 
