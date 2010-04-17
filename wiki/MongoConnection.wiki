@@ -1,0 +1,42 @@
+#summary The MongoDB connection object
+
+= Synopsis =
+
+
+{{{
+require('mongo')
+
+-- Create a connection object
+local db = assert(mongo.Connection.New())
+
+-- connect to the server on localhost
+assert(db:connect('localhost'))
+
+-- insert a value into the namespace 'test.values'
+assert(db:insert('test.values', {a = 10, b = 'str1'}))
+
+-- the same using a JSON string
+assert(db:insert('test.values', "{'a': 20, 'b': 'str2'}"))
+
+-- print the number of rows in the namespace 'test.values'
+print(con:count('test.blah'))
+
+-- query all the values in the namespace 'test.values'
+local q = assert(con:query('test.blah', {}))
+
+-- loop through the result set
+for d in q:rows() do
+        print(d.a)
+        print(b.a)
+end
+
+
+}}}
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
