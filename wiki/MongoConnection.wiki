@@ -36,14 +36,32 @@ end
 
 == Methods ==
 
+=== db,err = mongo.Connection.New(t) ===
+Returns a new Connection object, or nil and an error.
+Accepts an optional table of features:
+ * *auto_reconnect*,   (default = false)
+ * *rw_timeout*,       (default = 0, only supported in mongo >= v1.5)
+
 === ok,err = db:connect(connection_str) ===
+
+=== ok,err = db:auth(t) ===
+Authenticates a given database using a table of parameters:
+ * *dbname*,           database to authenticate (required)
+ * *username*,         username to authenticate against (required)
+ * *password*,         password to authenticate against (required)
+ * *digestPassword*,   set to true if password is pre-digested (default = true)
 
 === count,err = db:count(namespace) ===
 
 === ok,err = db:insert(namespace, value) ===
 
 === cursor,err = db:query(namespace, query) ===
+TODO: [http://code.google.com/p/luamongo/source/browse/trunk/mongo_connection.cpp#206 document more options]
 
 === ok,err = db:remove(namespace, query, single) ===
 
 === ok,err = db:update(namespace, query, modifier, upsert, multi) ===
+
+=== is_failed = db:is_failed() ===
+
+=== addr = db:get_server_address() ===
