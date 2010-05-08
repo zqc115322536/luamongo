@@ -37,3 +37,16 @@ Returns the next single result set (as a table) in the results of a query operat
 === iterator = query:results() ===
 
 Similar to the `next` method but returns an iterator function (as opposed to a table) that can be used in a for loop. 
+
+=== has_more = cursor:has_more(in_current_batch) ===
+  * pass true to call moreInCurrentBatch (mongo >=1.5)
+
+=== it_count = cursor:itcount() ===
+
+=== is_dead = cursor:is_dead() ===
+
+=== is_tailable = cursor:is_tailable() ===
+
+=== has_result_flag = cursor:has_result_flag() ===
+
+=== id = cursor:get_id() ===
