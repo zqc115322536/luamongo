@@ -1,0 +1,39 @@
+#summary Describes how BSON types work in mongolua
+
+luamongo automatically marshals data between [http://www.lua.org/manual/5.1/manual.html#2.2 Lua types] and [http://www.mongodb.org/display/DOCS/BSON BSON types].  Here is the mapping:
+
+|| *Lua Type* || *BSON Type* ||
+|| nil || Null value ||
+|| boolean || Boolean ||
+|| number || Floating point ||
+|| string || String ||
+|| table || new BSON Document by iterating pairs || 
+|| mongo.Date || UTC Datetime ||
+|| mongo.Timestamp || Timestamp ||
+|| mongo.RegEx || Regular Expression ||
+|| mongo.NumberInt || 32-bit integer ||
+|| mongo.Symbol || Symbol ||
+|| thread || UNSUPPORTED ||
+|| function || UNSUPPORTED ||
+|| userdata || UNSUPPORTED ||
+
+----
+
+You use the non-native types as follows:
+
+{{{
+-- store 'foo' as an integer, and 'bar' as a float
+db:insert('test.values', { foo = mongo.NumberInt(5), bar = 5 }
+}}}
+
+----
+
+== Implementation Notes ==
+
+The various BSON type objects (e.g. mongo.Date) work by creating a table with the following structure:
+{{{
+t[1] = value
+getmetatable(t).__bsontype = numeric_code_of_bson_type
+}}}
+
+When the marshalling code sees a table with this metatable field, it will change how it marshals the object.  You can find this [http://code.google.com/p/luamongo/source/browse/trunk/utils.cpp#90 here in the source code].
