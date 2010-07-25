@@ -1,4 +1,4 @@
-#summary Describes how BSON types work in mongolua
+#summary Describes how BSON types work in LuaMongo
 
 luamongo automatically marshals data between [http://www.lua.org/manual/5.1/manual.html#2.2 Lua types] and [http://www.mongodb.org/display/DOCS/BSON BSON types].  Here is the mapping:
 
