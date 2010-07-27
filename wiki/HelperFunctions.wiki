@@ -28,6 +28,6 @@ print(tonumber('FF', 16))           -- prints '255'
 
 Returns a string name of the BSON type of `obj`. If `obj` is not a BSON object, returns the standard Lua type name.
 
-=== num = mongo.tonumber(obj[, base]) ===
+=== num = mongo.tonumber`(obj[, base])` ===
 
 Returns the number value represented by `obj`.
