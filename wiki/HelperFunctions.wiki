@@ -17,6 +17,8 @@ print(mongo.type('test'))           -- prints 'string'
 
 local x = tonumber(newint)  + 10    -- x = 133
 print(tonumber(rx))                 -- prints 'nil'
+print(tonumber('test'))             -- prints 'nil'
+print(tonumber('FF', 16))           -- prints '255'
 
 }}}
 
