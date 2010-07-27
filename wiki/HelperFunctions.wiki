@@ -24,8 +24,8 @@ print(tonumber(rx))                 -- prints 'nil'
 
 === typename = mongo.type(obj) ===
 
-Returns a string name of the BSON type of *obj*. If *obj* is not a BSON object, returns the standard Lua type name.
+Returns a string name of the BSON type of `obj`. If `obj` is not a BSON object, returns the standard Lua type name.
 
-=== num = mongo.tonumber(obj![, base]) ===
+=== num = mongo.tonumber(obj[, base]) ===
 
-Returns the number value represented by *obj*.
+Returns the number value represented by `obj`.
