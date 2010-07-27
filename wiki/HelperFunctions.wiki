@@ -30,4 +30,6 @@ Returns a string name of the BSON type of `obj`. If `obj` is not a BSON object, 
 
 === `num = mongo.tonumber(obj[, base])` ===
 
-Returns the number value represented by BSON data `obj`. If `obj` is not a BSON data object, behaves exactly the same as Lua's builtin `tonumber`. 
+Returns the number value represented by BSON data `obj`. If the value of `obj` cannot be converted into a number returns `nil`.
+
+If `obj` is not a BSON data object behaves exactly the same as Lua's builtin `tonumber`. 
