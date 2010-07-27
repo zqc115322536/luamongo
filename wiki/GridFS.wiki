@@ -48,7 +48,7 @@ end
 === `gridfile, err = gridfs:find_file(filename)` === 
 === `cursor = gridfs:list()` === 
 === `ok, err = gridfs:remove_file(filename)` === 
-=== `gridfile, err = gridfs:store_file(filename[, remote_file], content_type]])` === 
+=== `gridfile, err = gridfs:store_file(filename[, remote_file[, content_type]])` === 
 
 === `chunk, err = gridfile:chunk(chunk_num)` === 
 === `chunk_size = gridfile:chunk_size()` === 
