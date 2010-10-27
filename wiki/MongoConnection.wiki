@@ -55,6 +55,9 @@ Authenticates a given database using a table of parameters:
 
 === ok,err = db:insert(namespace, value) ===
 
+=== ok,err = db:insert(namespace, {value1, value2, ...}) ===
+Inserts multiple documents in one system call.
+
 === cursor,err = db:query(namespace, query) ===
 TODO: [http://code.google.com/p/luamongo/source/browse/trunk/mongo_connection.cpp#206 document more options]
 
