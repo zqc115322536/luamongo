@@ -18,6 +18,9 @@ assert(db:insert('test.values', {a = 10, b = 'str1'}))
 -- the same using a JSON string
 assert(db:insert('test.values', "{'a': 20, 'b': 'str2'}"))
 
+-- insert a multiple values into the namespace 'test.values'
+assert(db:insert_batch('test.values', {{a = 10, b = 'str1'}, {c = 11, d = 'str2'}}))
+
 -- print the number of rows in the namespace 'test.values'
 print(db:count('test.values'))
 
