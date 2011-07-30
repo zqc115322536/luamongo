@@ -52,7 +52,7 @@ Authenticates a given database using a table of parameters:
  * *dbname*,           database to authenticate (required)
  * *username*,         username to authenticate against (required)
  * *password*,         password to authenticate against (required)
- * *digestPassword*,   set to true if password is pre-digested (default = true)
+ * *digestPassword*,   if password is plain text, set this to true. otherwise assumed to be pre-digested
 
 === count,err = db:count(namespace) ===
 
